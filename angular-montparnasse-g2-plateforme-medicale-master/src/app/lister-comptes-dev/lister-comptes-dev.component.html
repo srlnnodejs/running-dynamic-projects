@@ -1,0 +1,26 @@
+<div class="container spacer">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Liste des Comptes</div>
+        <div class="panel-body">
+            <table class="table table-striped">                
+                <tr>
+                    <td>ID</td>
+                    <td>LOGIN</td>
+                    <td>MOT DE PASSE</td>
+                    <td>TYPE</td>
+                    <td>Delete</td>
+                    <td>Update</td>
+                    
+                </tr>
+                <tr *ngFor="let a of pageComptes">
+                    <td>{{a.idCompte}}</td>
+                    <td>{{a.login}}</td>
+                    <td>{{a.mdp}}</td>
+                    <td>{{a.type}}</td>
+                    <td><button (click)="deleteComptes(a.idCompte)">Delete</button> </td>
+                    <td><button (click)="majComptes(a.idCompte)">Update</button> </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

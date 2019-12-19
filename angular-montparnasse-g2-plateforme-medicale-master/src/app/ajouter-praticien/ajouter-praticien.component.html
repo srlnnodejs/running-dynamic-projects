@@ -1,0 +1,41 @@
+<div class="container">
+        <h1>Creation profil praticien</h1>
+        <div class="form-group">
+            <label>Nom:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre nom" [(ngModel)]="praticien.nom"/>
+            <br/>
+            <label>Prenom:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre prenom" [(ngModel)]="praticien.prenom"/>
+            <br/>
+            <label>Date de naissance:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre date de naissance YYYY/MM/DD" [(ngModel)]="praticien.dateNaissance"/>
+            <br/>
+            <label>Telephone:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre numero de telephone" [(ngModel)]="praticien.telephone"/>
+            <br/>
+            <label>Email:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre email" [(ngModel)]="praticien.email"/>
+            <br/>
+            <label>Identifiant National:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre numero d'Identifiant National" [(ngModel)]="praticien.idNationale"/>
+            <br/>
+            <label>Liberal:</label>
+            <input type="text" class="form-control" placeholder="Etes vous libéral (true ou false)" [(ngModel)]="praticien.liberal"/>
+            <br/>
+            <label>Profession:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre profession" [(ngModel)]="praticien.metier"/>
+            <br/>
+            <label>Structure:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre structure" [(ngModel)]="praticien.structure"/>
+            <br/>
+            <label>Affiliation:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre affiliation" [(ngModel)]="praticien.affiliation"/>
+        </div>
+    <div>
+        <button type="button" class="btn btn-primary mr-2" (click)="addPraticiens()">Enregistrer profil praticien <img src="https://img.icons8.com/ios/20/000000/edit-user-male.png"></button> 
+    </div>
+    <br/>
+    <div>
+        <button routerLink="/listerPraticien" type="button" class="btn btn-primary mr-2">Liste des profils <img src="https://img.icons8.com/windows/24/000000/checklist.png"></button>
+    </div>
+</div>

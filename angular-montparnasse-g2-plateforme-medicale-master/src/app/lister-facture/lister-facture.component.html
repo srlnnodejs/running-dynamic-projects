@@ -1,0 +1,23 @@
+<div class="container spacer">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Liste des Factures</div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <tr>
+                        <td>ID des Factures</td>
+                        <td>Id du Payeur</td>
+                        <td>Nom du Payeur</td>
+                        <td>Type du Payeur</td>
+                        <td>Tarif</td>
+                    </tr>
+                    <tr *ngFor="let a of pageFactures">
+                        <td>{{a.idFacture}}</td>
+                        <td>{{a.payeur.idPayeur}}</td>
+                        <td>{{a.payeur.nomPayeur}}</td>
+                        <td>{{a.payeur.typePayeur}}</td>
+                        <td>{{a.tarif}}</td>
+                    </tr>
+                </table> 
+            </div>
+        </div>
+    </div>

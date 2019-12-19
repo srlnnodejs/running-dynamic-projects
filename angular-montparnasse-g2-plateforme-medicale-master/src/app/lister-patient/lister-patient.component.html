@@ -1,0 +1,34 @@
+<div class="container spacer">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Liste des Patients</div>
+        <div class="form-group">
+            <label>Veuillez saisir votre ID de Profil utilisateur :</label>
+            <input type="text" [(ngModel)]="personne.idPersonne"/>
+            <label>Veuillez saisir votre ID de Compte utilisateur :</label>
+            <input type="text" [(ngModel)]="compte.idCompte"/>
+            <button (click)="synchPatientCompte()">Je synchronise mon profil et mon compte</button>
+        </div>    
+        <div>
+            <button routerLink="/accueilPatient" class="btn btn-primary mr-2">Accueil</button>
+        </div>
+        <div class="panel-body">
+                <table class="table table-striped">
+                    <tr>(NB IMPORTANT: Vous devez conserver votre ID de Profil utilisateur</tr>
+                    <tr>
+                        <td>ID</td><td>NOM</td><td>PRENOM</td><td>DATE DE NAISSANCE</td><td>TELEPHONE</td><td>EMAIL</td><td>ID NATIONAL</td>
+                    </tr>
+                    <tr *ngFor="let a of pagePatients">
+                        <td>{{a.idPersonne}}</td>
+                        <td>{{a.nom}}</td>
+                        <td>{{a.prenom}}</td> 
+                        <td>{{a.dateNaissance|date:"yyyy/MM/dd"}}</td> 
+                        <td>{{a.telephone}}</td>
+                        <td>{{a.email}}</td>
+                        <td>{{a.idNationale}}</td>
+                        <td><button (click)="deletePatients(a.idPersonne)">Delete</button> </td>
+                        <td><button (click)="majPatients(a.idPersonne)">Update</button> </td>
+                    </tr>
+                </table> 
+            </div>
+        </div>
+    </div>

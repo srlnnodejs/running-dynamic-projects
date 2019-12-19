@@ -1,0 +1,183 @@
+/* Background */
+
+.starBackground {
+  background: url(/images/nightsky3.jpg) no-repeat;
+  background-color: $black;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  height: 100vh; // Only works for modern browsers, but degrades gracefully
+
+}
+
+.grayBackground {
+  background: $darkGray;
+}
+
+header {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+/* Main */
+
+main {
+  margin: 1em;
+}
+
+/* Nav */
+
+.nav ul {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.nav ul li {
+  display: inline;
+  margin-right: 1.5em;
+}
+
+.nav ul li a {
+  color: $white;
+  font-size: 1.2em;
+}
+
+.nav ul li a:hover {
+  color: $blue;
+  cursor: pointer;
+}
+
+/* Flexbox */
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.flex-container__content {
+  align-items: baseline;
+  background-color: #ffffff;
+  color: $black;
+  width: 80%;
+  margin: 1% 8.5%;
+}
+
+.flex-item {
+  margin: 1em auto;
+}
+
+.flex-item__dash {
+  margin: 0.5em auto;
+  width: 16.875em;
+}
+
+.flex-item__figure {
+  margin: .5em auto;
+  padding: 1em;
+  width: 40em;
+  height: 25em;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.graphs {
+  background-color: $lightGray;
+}
+
+@media only screen and (max-width : 40em) {
+  .flex-container__content {
+    flex-direction: column;
+  }
+}
+
+.flex-item__leftcol {
+  margin: .5em auto;
+  width: 20%;
+}
+
+.flex-item__rightcol {
+  margin: .5em auto;
+  width: 65%;
+}
+
+.flex-item__nav {
+  margin: 1em auto;
+  padding: .5em .5em;
+}
+
+/* Article */
+
+article {
+  padding: 1em;
+  line-height: 1em;
+}
+
+/* Dashboard */
+
+.info {
+  color: $black;
+  padding: 1em;
+}
+
+figure {
+  background: $white;
+}
+
+/* Menu */
+
+menu ol {
+  margin: 1em auto;
+}
+
+menu ol li {
+  padding-bottom: 1em;
+}
+
+.domains {
+  position: relative;
+}
+
+.domains ul {
+  position: absolute;
+  padding-top: 24px;
+  width: 100%;
+  li {
+    background: $white;
+    color: $black;
+    line-height: 1.2em;
+    margin-top: 1px;
+    padding: .5em;
+    width: 100%;
+    &:hover {
+      background: $blue;
+    }
+  }
+}
+
+/* Footer */
+
+footer {
+  margin: 2em;
+}
+
+/* Button */
+
+button {
+  background: $blue;
+  color: $white;
+  font: 0.955em "Open Sans", sans-serif;
+  letter-spacing: 0.02em;
+  padding: 0.75em 3em;
+  text-transform: uppercase;
+  border: 0;
+  text-align: center;
+  display: inline-block;
+}

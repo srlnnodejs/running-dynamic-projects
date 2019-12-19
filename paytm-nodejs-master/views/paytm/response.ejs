@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+ <% if(status) { %>
+    <title>true</title>
+    <% } else { %>
+        <title>false</title>
+        <% } %>
+
+</head>
+<body>
+        <% if(status) { %>
+            <div>Transaction completed</div>
+            <% } else { %>
+                <div>Oops! something went wrong</div>
+                <% } %>
+</body>
+</html>

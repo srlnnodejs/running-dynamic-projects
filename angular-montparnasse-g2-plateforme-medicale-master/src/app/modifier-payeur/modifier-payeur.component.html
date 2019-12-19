@@ -1,0 +1,17 @@
+<h1>Modifier profil du payeur</h1>
+
+<div class="form-group">
+    <label>Nom de l'organisme payeur:</label>
+    <input type="text" [(ngModel)]="payeur.nomPayeur"/>
+    <br/>
+    <label>Type de payeur:</label>
+    <input type="text" [(ngModel)]="payeur.typePayeur"/>
+    <br/>
+    <label>Taux:</label>
+    <input type="text" [(ngModel)]="payeur.taux"/>
+    <br/>
+    <button (click)="modifierPayeurs()">Modifier un payeur</button> 
+</div>
+<div>
+    <button routerLink="/listerPayeur" class="btn btn-primary mr-2">Aller a la liste des profils</button>
+</div>

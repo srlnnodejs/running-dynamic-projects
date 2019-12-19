@@ -1,0 +1,26 @@
+<header class="flex-container">
+	<section class="flex-item">
+    <a href="/">
+      <img src="images/logotextwhite.png" width="320px" height="134px">
+    </a>
+  </section>
+
+  <sextant-nav></sextant-nav>
+
+	<nav class="nav flex-item">
+    <ul>
+      <li  id="nav" data-ng-init="navDropdown = false" data-ng-click="openNavDropdown()" data-ng-mouseleave="closeNavDropdown()">
+        <a data-ng-click="">Add a domain</a>
+        <form id="add-domain-nav" ng-show="navDropdown">
+          <fieldset>
+            <input data-ng-model="newDomain" id="domain" placeholder="URL">
+          </fieldset>
+          <fieldset>
+            <button data-ng-click="addDomain()">Add</button>
+          </fieldset>
+        </form>
+      </li>
+      <li><a data-ng-click="logOut()">Log out</a></li>
+    </ul>
+  </nav>
+</header>

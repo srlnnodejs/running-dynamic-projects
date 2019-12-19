@@ -1,0 +1,25 @@
+<div class="container spacer">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Liste des Remboursements</div>
+            <div class="panel-body">
+                <table class="table table-striped">
+                    <tr>
+                        <td>ID DES REMBOURSEMENTS</td>
+                        <td>Id du Payeur</td>
+                        <td>Nom du Payeur</td>
+                        <td>Type du Payeur</td>
+                        <td>ID de la facture</td>
+                        <td>PRIX</td>
+                    </tr>
+                    <tr *ngFor="let a of pageRemboursements">
+                        <td>{{a.idRemboursement}}</td>
+                        <td>{{a.payeur.idPayeur}}</td>
+                        <td>{{a.payeur.nomPayeur}}</td>
+                        <td>{{a.payeur.typePayeur}}</td>
+                        <td>{{a.facture.idFacture}}</td>
+                        <td>{{a.prix}}</td> 
+                    </tr>
+                </table> 
+            </div>
+        </div>
+    </div>

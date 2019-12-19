@@ -1,0 +1,17 @@
+<div class="container spacer">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Liste des rdv</div>
+		<div class="panel-body">
+			<table class="table table-striped">
+				<tr>
+					<td>ID DU RDV</td>
+					<td>DATE DU RDV</td>
+				</tr>
+				<tr *ngFor="let a of pageRdvs">
+					<td>{{a.idRdv}}</td>
+					<td>{{a.dateRdv|date:"yyyy/MM/dd"}}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>

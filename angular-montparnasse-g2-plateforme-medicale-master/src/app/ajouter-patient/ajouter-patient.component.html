@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Creation profil patient</h1>
+    <div class="form-group">
+        <label>Nom:</label>
+        <input type="text" class="form-control" placeholder="Saisir votre nom" [(ngModel)]="patient.nom"/>
+        <br/>
+        <label>Prenom:</label>
+        <input type="text" class="form-control" placeholder="Saisir votre prenom"  [(ngModel)]="patient.prenom"/>
+        <br/>
+        <label>Date de naissance:</label>
+        <input type="text" class="form-control" placeholder="Saisir votre date de naissance YYYY/MM/DD" [(ngModel)]="patient.dateNaissance"/>
+		<br/>
+        <label>Telephone:</label>
+        <input type="text" class="form-control" placeholder="Saisir votre numero de telephone" [(ngModel)]="patient.telephone"/>
+        <br/>
+        <label>Email:</label>
+        <input type="text" class="form-control" placeholder="Saisir votre email" [(ngModel)]="patient.email"/>
+        <br>
+        <label>Identifiant National:</label>
+        <input type="text" class="form-control" placeholder="Saisir votre numero d'Identifiant National" [(ngModel)]="patient.idNationale"/>
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary mr-2" (click)="addPatients()">Enregistrer profil patient <img src="https://img.icons8.com/ios/20/000000/edit-user-male.png"></button> 
+    </div>
+    <br/>
+    <div>
+        <button routerLink="/listerPatient" type="button" class="btn btn-primary mr-2">Liste des profils <img src="https://img.icons8.com/windows/24/000000/checklist.png"></button>
+    </div>
+</div>

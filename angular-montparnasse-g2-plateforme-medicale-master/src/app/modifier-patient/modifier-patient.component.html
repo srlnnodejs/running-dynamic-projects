@@ -1,0 +1,25 @@
+<!-- formulaire de saisie -->
+<div class="form-group">
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="patient.nom"/>
+    <br/>
+    <label>Prenom:</label>
+    <input type="text" [(ngModel)]="patient.prenom"/>
+        <br/>
+    <label>Date de naissance (format YYYY-MM-DD):</label>
+    <input type="text" [(ngModel)]="patient.dateNaissance"/>
+        <br/>
+    <label>Telephone:</label>
+    <input type="text" [(ngModel)]="patient.telephone"/>
+        <br/>
+    <label>Email:</label>
+    <input type="text" [(ngModel)]="patient.email"/>
+        <br/>
+    <label>Identifiant National:</label>
+    <input type="text" [(ngModel)]="patient.idNationale"/>
+        <br/>
+    <button (click)="modifierPatients()">Modifier un patient</button> 
+</div>
+<div>
+    <button routerLink="/listerPatient" class="btn btn-primary mr-2">Retourner a la liste des profils</button>
+</div>

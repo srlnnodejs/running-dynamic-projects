@@ -1,0 +1,79 @@
+<html ng-app = "myApp">
+<head>
+	<base  href = "/" />
+	<meta charset = "utf-8" />
+	<meta http-equiv = "X-UA-Compatible"  content = "IE=edge" />
+	<meta name = "viewport" content = "width=device-width,initial-scale=1" />	
+	<title>ShowTrackr</title>
+	<link rel = "icon" type = "image/png" href = "favicon.png" />
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+</head>
+<body>
+	
+	<!-- navbar -->
+	<div ng-controller = "NavbarCtrl" class="navbar navbar-default navbar-static-top" role = "navigation" bs-navbar>
+		<div class="navbar-header">
+			<a class="navbar-brand" href = "/" >
+				<span class="glyphicon glyphicon-film"></span>
+				Show<strong>Trackr</strong>
+			</a>
+		</div>
+			<ul class="navbar navbar-nav">
+				<li data-match-route = "/$">
+					<a href = "/">Home</a>
+				</li>
+
+				<li data-match-route = "/add">
+					<a href = "/add">Add</a>
+				</li>
+			</ul>
+
+			<ul class = "navbar navbar-nav pull-right" ng-if = "!currentUser">
+				<li data-match-route = "/login">
+					<a href = "/login">Login</a>
+				</li>
+				<li data-match-route = "/signup">
+					<a href = "/signup">Sign up</a>
+				</li>
+			</ul>
+
+			<ul class="navbar navbar-nav pull-right" ng-if = "currentUser"> 
+				<li class = "navbar-text" ng-bind = "currentUser.email"></li>
+				<li>
+					<a href = "javascript:void(0)" ng-click = "logout()">Logout</a>
+				</li>
+			</ul>
+
+		
+
+	</div>
+	<!-- end of navbar -->
+	<div ng-view>
+
+	</div>
+
+	<script type="text/javascript" src = "vendor/angular.js"></script>
+	<script type="text/javascript" src = "vendor/angular-strap.js"></script>
+	<script type="text/javascript" src = "vendor/angular-strap.tpl.js"></script>
+	<script type="text/javascript" src = "vendor/angular-messages.js"></script>
+	<script type="text/javascript" src = "vendor/angular-resource.js"></script>
+	<script type="text/javascript" src = "vendor/angular-route.js"></script>
+	<script type="text/javascript" src = "vendor/angular-cookies.js"></script>
+	<script type="text/javascript" src = "vendor/moment.min.js"></script>
+	<script type="text/javascript" src = "app.js"></script>
+	<script type="text/javascript" src = "controllers/main.js"></script>
+	<script type="text/javascript" src = "services/show.js"></script>
+	<script type="text/javascript" src = "controllers/add.js"></script>
+	<script type="text/javascript" src = "controllers/detail.js"></script>
+	<script type="text/javascript" src = "filters/fromnow.js"></script>
+	<script type="text/javascript" src = "services/subscription.js"></script>
+	<script type="text/javascript" src = 'directives/repeatPassword.js'></script>
+	<script type="text/javascript" src = 'services/auth.js'></script>
+	<script type="text/javascript" src = 'controllers/login.js'></script>
+	<script type="text/javascript" src = 'controllers/signup.js'></script>
+	<script type="text/javascript" src = 'controllers/navbar.js'></script>
+
+
+	
+</body>
+</html>

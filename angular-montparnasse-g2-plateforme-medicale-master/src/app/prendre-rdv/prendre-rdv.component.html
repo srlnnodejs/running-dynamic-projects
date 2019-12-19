@@ -1,0 +1,141 @@
+<!-- formulaire de saisie -->
+<div class="container">
+    <div class="form-group">
+        <h5><a>Entrez votre ID de patient ainsi que l'ID du praticien voulu.</a>
+        <a>Vous pouvez ensuite verifier sa disponibilite.</a></h5>
+    </div>
+    <div class="form-group">
+        <label>ID du patient :</label>
+        <input type="text" class="form-control" placeholder="Saisir l'ID du patient" [(ngModel)]="patient.idPatient" />
+        <br/>
+        <label>ID du praticien :</label>
+        <input type="text" class="form-control" placeholder="Saisir l'ID du praticien"[(ngModel)]="praticien.idPraticien" />
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="verifierRdvs()">Verifier la disponibilite</button>
+    </div>  
+    <br/>
+    <div class="form-group">
+        <h5><a>Si les champs ci-dessus se vident, c'est que votre rendez-vous est deja pris, vous devez donc choisir un
+            autre praticien.</a>
+        <a>Sinon vous pouvez supprimer le rendez-vous et en creer un nouveau.</a></h5>
+    </div>
+    
+    <div class="form-group">
+        <a>Votre ID :</a> {{patient.idPatient}}
+    
+        <a>ID du praticien :</a> {{praticien.idPraticien}}
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="deleteRdvs()">Supprimer le rendez-vous<img src="https://img.icons8.com/material-outlined/25/000000/delete-trash.png"></button>
+    </div>
+    <br/>
+    <div class="form-group">
+        <h5>Remplissez les champs ci-dessous pour enregistrer un nouveau rendez-vous.</h5>
+        <label>Votre ID :</label>
+        <input type="text" class="form-control" [(ngModel)]="patient.idPatient" />
+        <br/>
+        <label>ID du praticien voulu :</label>
+        <input type="text" class="form-control"[(ngModel)]="praticien.idPraticien" />
+    </div>
+    <div>
+        <button type="button" class="btn btn-primary" (click)="addRdvs()">Prendre un nouveau RDV<img src="https://img.icons8.com/windows/32/000000/overtime.png"></button>
+    </div>
+    <br/>
+    <div>
+        <h5><label>Si vous etes un patient : tapez 1.</label>
+            <br/>
+        <label>Si vous etes un praticien : tapez 2</label></h5>
+        <input type="text" class="form-control" [(ngModel)]="choix" />
+    </div>
+    <br/>
+
+    <div *ngIf="choix == 1" class="panel-body">
+        <table class="table table-striped">
+            <h5>Liste de praticiens</h5>
+            <tr>
+                <td>ID</td>
+                <td>NOM</td>
+                <td>PRENOM</td>
+                <td>DATE DE NAISSANCE</td>
+                <td>TELEPHONE</td>
+                <td>EMAIL</td>
+                <td>ID NATIONAL</td>
+                <td>LIBERAL</td>
+                <td>METIER</td>
+                <td>STRUCTURE</td>
+                <td>AFFILIATION</td>
+            </tr>
+            <tr *ngFor="let a of pagePraticiens">
+                <td>{{a.idPersonne}}</td>
+                <td>{{a.nom}}</td>
+                <td>{{a.prenom}}</td>
+                <td>{{a.dateNaissance|date:"yyyy/MM/dd"}}</td>
+                <td>{{a.telephone}}</td>
+                <td>{{a.email}}</td>
+                <td>{{a.idNationale}}</td>
+                <td>{{a.liberal}}</td>
+                <td>{{a.metier}}</td>
+                <td>{{a.structure}}</td>
+                <td>{{a.affiliation}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div *ngIf="choix == 2" class="panel-body">
+        <table class="table table-striped">
+            <h5>Liste de praticiens</h5>
+            <tr>
+                <td>ID</td>
+                <td>NOM</td>
+                <td>PRENOM</td>
+                <td>DATE DE NAISSANCE</td>
+                <td>TELEPHONE</td>
+                <td>EMAIL</td>
+                <td>ID NATIONAL</td>
+                <td>LIBERAL</td>
+                <td>METIER</td>
+                <td>STRUCTURE</td>
+                <td>AFFILIATION</td>
+            </tr>
+            <tr *ngFor="let a of pagePraticiens">
+                <td>{{a.idPersonne}}</td>
+                <td>{{a.nom}}</td>
+                <td>{{a.prenom}}</td>
+                <td>{{a.dateNaissance|date:"yyyy/MM/dd"}}</td>
+                <td>{{a.telephone}}</td>
+                <td>{{a.email}}</td>
+                <td>{{a.idNationale}}</td>
+                <td>{{a.liberal}}</td>
+                <td>{{a.metier}}</td>
+                <td>{{a.structure}}</td>
+                <td>{{a.affiliation}}</td>
+            </tr>
+        </table>
+        <br/>
+        <table class="table table-striped">
+            <h5>Liste de patients</h5>
+            <tr>
+                <td>ID</td>
+                <td>NOM</td>
+                <td>PRENOM</td>
+                <td>DATE DE NAISSANCE</td>
+                <td>TELEPHONE</td>
+                <td>EMAIL</td>
+                <td>ID NATIONAL</td>
+            </tr>
+            <tr *ngFor="let a of pagePatients">
+                <td>{{a.idPersonne}}</td>
+                <td>{{a.nom}}</td>
+                <td>{{a.prenom}}</td>
+                <td>{{a.dateNaissance|date:"yyyy/MM/dd"}}</td>
+                <td>{{a.telephone}}</td>
+                <td>{{a.email}}</td>
+                <td>{{a.idNationale}}</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <button routerLink="/accueilPatient" class="btn btn-primary mr-2">Retourner a mon espace personnel<img src="https://img.icons8.com/ios/26/000000/guest-male-filled.png"></button>
+    </div>
+</div>

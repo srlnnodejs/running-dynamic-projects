@@ -1,0 +1,110 @@
+ <div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div class="bg-light border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading text-center"> MENU </div>
+        <div class="list-group list-group-flush">
+            <a href="/pageAcceuil" class="list-group-item list-group-item-action bg-light">Dashboard</a>
+            <a href="/listerPraticien" class="list-group-item list-group-item-action bg-light">Liste Praticiens</a>
+            <a href="/prendreRdv" class="list-group-item list-group-item-action bg-light">Prendre Rdv</a>
+        </div>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <h2>Bienvenue sur votre espace personnel Patient</h2>
+ 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </nav>
+
+        <div class="container">
+            <div class="form-group">
+                <label>Veuillez saisir votre ID de Profil utilisateur :</label>
+                <input type="text" class="form-control" [(ngModel)]="patient.idPersonne" />
+            </div>
+
+            <button type="button" class="btn btn-primary mr-2" (click)="espacePatient()">Afficher l'espace
+                personnel</button>
+
+
+            <button type="button" class="btn btn-primary mr-2" routerLink="/rattacherPatient">attribuer Patient</button>
+
+            <div *ngIf="patient.idPersonne > 0">
+               
+                <table class="w3-table w3-striped">
+                    <tbody>
+                        <tr>
+                            <th scope="row">ID</th>
+                            <td>{{patient.idPersonne}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Nom</th>
+                            <td>{{patient.nom}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Prenom</th>
+                            <td>{{patient.prenom}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Date de naissance</th>
+                            <td>{{patient.dateNaissance|date:"yyyy/MM/dd"}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Numero</th>
+                            <td>{{patient.telephone}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Email</th>
+                            <td>{{patient.email}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Identifiant National</th>
+                            <td>{{patient.idNationale}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Rattachement</h5>
+                            <p class="card-text">Retrouvez ici la liste des personnes a votre charge.</p>
+                            <button routerLink="/listePatientRattaches" class="btn btn-primary mr-2">Liste des patients
+                                rattaches</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Historique de vos remboursements</h5>
+                            <p class="card-text">Retrouvez ici la liste de vos remboursements.</p>
+                            <button routerLink="/listerRemboursementPatient" class="btn btn-primary mr-2">Vos
+                                remboursements</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Prendre un RDV</h5>
+                            <p class="card-text">Cliquez ici pour prendre un RDV.</p>
+                            <button routerLink="/prendreRdv" class="btn btn-primary mr-2">Prendre un RDV</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     

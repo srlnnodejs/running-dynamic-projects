@@ -1,0 +1,10 @@
+<!-- formulaire de saisie -->
+<div class="form-group">
+    <label>Login:</label>
+    <input type="text" [(ngModel)]="compte.login"/>
+    <label>Mot de Passe:</label>
+    <input type="text" [(ngModel)]="compte.mdp"/>
+    <label>Type:</label>
+    <input type="text" [(ngModel)]="compte.type"/>
+    <button (click)="modifierComptes()">Modifier un compte</button> 
+</div>

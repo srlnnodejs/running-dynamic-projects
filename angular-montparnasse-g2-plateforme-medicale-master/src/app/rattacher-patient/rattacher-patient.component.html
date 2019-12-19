@@ -1,0 +1,34 @@
+<div class="form-group">
+    <label>Entrez votre ID utilisateur :</label>
+    <input type="text" [(ngModel)]="patient1.idPatient1" />
+    <label>Entrez l'ID utilisateur de la personne a rattacher :</label>
+    <input type="text" [(ngModel)]="patient2.idPatient2" />
+    <button (click)="rattacherPatients()">Rattacher</button>
+</div>
+<div>
+    <button routerLink="/accueilPatient" class="btn btn-primary mr-2">Retourner a mon espace personnel</button>
+</div>
+
+<div class="panel-body">
+    <table class="table table-striped">
+        <tr>(NB IMPORTANT: Vous devez conserver votre ID de Profil utilisateur</tr>
+        <tr>
+            <td>ID</td>
+            <td>NOM</td>
+            <td>PRENOM</td>
+            <td>DATE DE NAISSANCE</td>
+            <td>TELEPHONE</td>
+            <td>EMAIL</td>
+            <td>ID NATIONAL</td>
+        </tr>
+        <tr *ngFor="let a of pagePatients">
+            <td>{{a.idPersonne}}</td>
+            <td>{{a.nom}}</td>
+            <td>{{a.prenom}}</td>
+            <td>{{a.dateNaissance|date:"yyyy/MM/dd"}}</td>
+            <td>{{a.telephone}}</td>
+            <td>{{a.email}}</td>
+            <td>{{a.idNationale}}</td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,76 @@
+<div class="container">
+	<div class="form-group">
+		<label>Veuillez saisir votre ID de Profil utilisateur :</label>
+		<input type="text" class="form-control" [(ngModel)]="praticien.idPersonne" />
+	</div>
+	<button type="button" class="btn btn-primary mr-2" (click)="espacePraticien()">Afficher l'espace personnel</button>
+
+	<div *ngIf="praticien.idPersonne > 0">
+		<h2 id="top">Bienvenue sur votre espace personnel Praticien</h2>
+		<table class="w3-table w3-striped">
+			<tr>
+				<th scope="row">ID</th>
+				<td>{{praticien.idPersonne}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Nom</th> 
+				<td>{{praticien.nom}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Prenom</th>
+				<td>{{praticien.prenom}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Date de Naissance</th>
+				<td>{{praticien.dateNaissance|date:"yyyy/MM/dd"}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Numero de telephone</th>
+				<td>{{praticien.telephone}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Email</th>
+				<td>{{praticien.email}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Identifiant National</th>
+				<td>{{praticien.idNationale}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Statut de la profession</th>
+				<td>{{praticien.liberal}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Metier</th>
+				<td>{{praticien.metier}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Structure</th>
+				<td>{{praticien.structure}}</td>
+			</tr>
+			<tr>
+				<th scope="row">Affiliation</th>
+				<td>{{praticien.affiliation}}</td>
+			</tr>
+		</table>
+
+		<div class="col-sm-4">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Agenda RDV</h5>
+					<p class="card-text">Retrouvez votre agenda de RDV.</p>
+					<button routerLink="/prendreRdv" class="btn btn-primary mr-2">Agenda de rendez-vous</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Generer des factures</h5>
+					<p class="card-text">Retrouvez votre espace de creation de factures.</p>
+					<button routerLink="/ajouterFacture" class="btn btn-primary mr-2">Generer des factures</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,11 @@
+<div class="root-container">
+    <div>
+        <sidebar #sideBar></sidebar>
+    </div>
+    <div class="no-side">
+        <header [sideBar]="sideBar"></header>
+        <router-outlet></router-outlet>
+        <alert></alert>
+    </div>
+</div>
+

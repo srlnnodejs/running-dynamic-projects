@@ -1,0 +1,75 @@
+<main class="starBackground">
+
+  <!-- Intentionally NOT the header directive -->
+  <header class="flex-container">
+    <section class="flex-item">
+      <a href="index.html">
+        <img src="images/logotextwhite.png">
+      </a>
+      <h1>Microanalytics for a JavaScript world</h1>
+    </section>
+  </header>
+
+  <!--Log in-->
+  <article class="flex-container" data-ng-init="newUser = false" data-ng-show="!newUser">
+    <div data-ng-controller="sessionController">
+      <section class="flex-item">
+        <form id="login">
+          <h1 class="hidden">Login</h1>
+          <fieldset>
+            <legend>Log in</legend>
+            <ol>
+              <li>
+                <input data-ng-model="user.email" id="email" name="Email" type="email" placeholder="Email" required autofocus>
+              </li>
+              <li>
+                <input data-ng-model="user.password" id="password" name="password" type="password" placeholder="Password" required>
+              </li>
+            </ol>
+          </fieldset>
+          <fieldset>
+            <button ng-click="logIn()">Log In</button>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+  </article>
+
+  <!--Create a new account-->
+  <article class="flex-container" data-ng-show="newUser">
+    <div data-ng-controller="accountController">
+      <section class="flex-item">
+        <form id="register">
+          <h1 class="hidden">Create account</h1>
+          <fieldset>
+            <legend>Create an account</legend>
+            <ol>
+              <li>
+                <input id="email" name="Email" type="email" data-ng-model="user.newEmail" placeholder="Email" required autofocus>
+              </li>
+              <li>
+                <input id="password" name="password" type="password" data-ng-model="user.newPassword" placeholder="Password" required>
+              </li>
+              <li>
+                <input id="url" name="url" data-ng-model="user.newDomain" placeholder="http://domainToTrack.com" required>
+              </li>
+            </ol>
+          </fieldset>
+          <fieldset>
+            <button data-ng-click="createNewUser()">Create account</button>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+  </article>
+
+  <!-- Toggle new user / existing user -->
+  <article class="flex-container">
+    <h1 class="hidden">Toggle</h1>
+    <a data-ng-click="newUser = !newUser">{{!newUser ? 'Or create a new account' : 'Have an existing account? Sign in here'}}</a>
+  </article>
+
+  <!-- Intentionally omit footer, to keep first impression clean :) -->
+  <!-- <sextant-footer></sextant-footer> -->
+
+</main>

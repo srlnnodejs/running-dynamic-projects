@@ -1,0 +1,52 @@
+<main class="grayBackground">
+
+  <sextant-header></sextant-header>
+
+	<article class="flex-container flex-container__content">
+		<h1 class="hidden">Select a domain</h1>
+    <section class="flex-item__dash" data-ng-mouseout="hideList()">
+			<div data-ng-mouseover='openDropdown()' data-ng-mouseleave='closeDropdown()' class="domains">
+				<h2 class="link">
+		      Select a domain
+				</h2>
+	      <ul data-ng-show="dropdown">
+	        <li data-ng-repeat="domain in domains" data-ng-click="getVisits(domain._id)" class="link">
+	          {{domain.host}}
+	        </li>
+	      </ul>
+	    </div>
+	  </section>
+  </article>
+
+	<article class="flex-container flex-container__content graphs" data-ng-show="selectedDomain">
+		<h1 class="hidden">Graphical data</h1>
+		<figure class="flex-item__figure">
+	    <div>
+	      <visit-summary></visit-summary>
+	    </div>
+	  </figure>
+
+	  <figure class="flex-item__figure">
+	    <div>
+	      <event-bar-graph></event-bar-graph>
+	    </div>
+	  </figure>
+
+	  <figure class="flex-item__figure">
+	    <div>
+	      <page-graph></page-graph>
+	    </div>
+	  </figure>
+
+	</article>
+
+	<article class="flex-container flex-container__content" data-ng-show="selectedDomain">
+		<h1 class="hidden">Clear visit data</h1>
+		<section class="flex-item__dash">
+			<button data-ng-click="deleteVisits()">Clear visit data</button>
+		</section>
+	</article>
+
+	<sextant-footer></sextant-footer>
+
+</main>

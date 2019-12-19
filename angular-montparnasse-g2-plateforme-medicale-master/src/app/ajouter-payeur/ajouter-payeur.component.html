@@ -1,0 +1,21 @@
+<!-- formulaire de saisie -->
+<div class="container">
+        <h1>Creation profil payeur</h1>
+        <div class="form-group">
+            <label>Nom du payeur:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre nom payeur" [(ngModel)]="payeur.nomPayeur"/>
+            <br/>
+            <label>Type de payeur:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre type (mutuelle, assurance...)" [(ngModel)]="payeur.typePayeur"/>
+            <br/>
+            <label>Taux:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre taux" [(ngModel)]="payeur.taux"/>
+        </div>
+    <div>
+        <button type="button" class="btn btn-primary mr-2" (click)="addPayeurs()">Enregistrer profil payeur <img src="https://img.icons8.com/ios/20/000000/edit-user-male.png"></button> 
+    </div>
+    <br/>
+    <div>
+        <button routerLink="/listerPayeur" type="button" class="btn btn-primary mr-2">Liste des profils <img src="https://img.icons8.com/windows/24/000000/checklist.png"></button>
+    </div>
+</div>

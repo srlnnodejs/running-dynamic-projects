@@ -1,0 +1,36 @@
+<div class="container spacer">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Liste des Payeurs</div>
+        <div class="form-group">
+            <label>Veuillez saisir votre ID de Profil utilisateur :</label>
+            <input type="text" [(ngModel)]="payeur.idPayeur" />
+            <label>Veuillez saisir votre ID de Compte utilisateur :</label>
+            <input type="text" [(ngModel)]="compte.idCompte" />
+            <button (click)="synchPayeurCompte()">Je synchronise mon profil et mon compte</button>
+        </div>
+        <div>
+            <button routerLink="/accueilPayeur" class="btn btn-primary mr-2">Accueil</button>
+        </div>
+        <div class="panel-body">
+            <h6>(NB IMPORTANT: Vous devez conserver votre ID de Profil utilisateur</h6>
+            <table class="table table-striped">
+                <tr>
+                    <td>ID DU PAYEUR</td>
+                    <td>NOM DU PAYEUR</td>
+                    <td>TYPE</td>
+                    <td>TAUX</td>
+                    <td>Delete</td>
+                    <td>Update</td>
+                </tr>
+                <tr *ngFor="let a of pagePayeurs">
+                    <td>{{a.idPayeur}}</td>
+                    <td>{{a.nomPayeur}}</td>
+                    <td>{{a.typePayeur}}</td>
+                    <td>{{a.taux}}</td>
+                    <td><button (click)="deletePayeurs(a.idPayeur)">Delete</button> </td>
+                    <td><button (click)="majPayeurs(a.idPayeur)">Update</button> </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

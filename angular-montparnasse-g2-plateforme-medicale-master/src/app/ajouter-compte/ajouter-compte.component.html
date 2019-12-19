@@ -1,0 +1,24 @@
+<div class="container">
+        <h1>Etape 1. Creation d'un compte PMD</h1>
+        <div class="form-group">
+            <label>Login:</label>
+            <input type="text" class="form-control" placeholder="Saisir votre login" [(ngModel)]="compte.login" />
+        </div>
+        <div class="form-group">
+            <label>Mot de Passe:</label>
+            <input type="password" class="form-control"
+                placeholder="Saisir votre mot de passe" [(ngModel)]="compte.mdp" />
+        </div>
+        <div class="form-group">
+            <label>Type: (patient, praticien, payeur...)</label>
+            <input class="form-control" type="text" placeholder="saisir votre type de compte"
+                [(ngModel)]="compte.type" />
+        </div>
+        <br />
+        <button type="button" class="btn btn-primary" (click)="addComptes()">Enregistrer</button>
+</div>
+
+
+<div>
+    <h2><a href="/listerCompte">Etape 2. Cliquez pour rediriger vers la Liste des Comptes Crees</a></h2>
+</div>

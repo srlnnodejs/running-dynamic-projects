@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label>Remplissez les champs ci-dessous pour generer un nouveau remboursement.</label>
+</div>
+<div class="form-group">
+    <label>ID du payeur :</label>
+    <input type="text" [(ngModel)]="payeur.idPayeur" />
+    <label>ID de la facture :</label>
+    <input type="text" [(ngModel)]="facture.idFacture" />
+    <button (click)="addRemboursements()">Generer un remboursement</button>
+</div>
+<div class="form-group">
+	<button routerLink="/accueilPayeur" class="btn btn-primary mr-2">Retourner a mon espace personnel</button>
+</div>

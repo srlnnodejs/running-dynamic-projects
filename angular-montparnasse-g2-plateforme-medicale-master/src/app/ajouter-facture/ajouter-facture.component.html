@@ -1,0 +1,13 @@
+<div class="form-group">
+    <label>Remplissez les champs ci-dessous pour generer une nouvelle facture.</label>
+</div>
+<div class="form-group">
+    <label>ID du payeur :</label>
+    <input type="text" [(ngModel)]="payeur.idPayeur" />
+    <label>Tarif :</label>
+    <input type="text" [(ngModel)]="facture.tarif" />
+    <button (click)="addFactures()">Generer une facture</button>
+</div>
+<div class="form-group">
+	<button routerLink="/accueilPraticien" class="btn btn-primary mr-2">Retourner a mon espace personnel</button>
+</div>

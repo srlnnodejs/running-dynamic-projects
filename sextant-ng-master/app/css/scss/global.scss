@@ -1,0 +1,76 @@
+// Define global colors:
+$blue: steelBlue;
+$darkBlue: #0266c8;
+$darkGray: #161616;
+$lightGray: rgb(225,225,225);
+$white: #fff;
+$black: #000;
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: $white;
+  background-color: $darkGray;
+  min-height: 100%;
+}
+
+main {
+  min-height: 100%;
+}
+
+a {
+  text-decoration:none;
+  color: $white;
+}
+
+.domains a {
+  color: $blue;
+}
+
+a:hover {
+  color: $blue;
+  cursor: pointer;
+}
+
+div.viewWrapper{
+  margin:50px auto;
+  min-height:400px;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.546em;
+}
+
+h3 {
+  font-size: 1.3em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+h1, h2, h3 {
+  font-family: "Montserrat";
+  text-align: center;
+}
+
+p {
+  font-size: 0.95em;
+  padding: 0.5em 0;
+}
+
+/* Reusable classes */
+
+.link {
+  color: $blue;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}

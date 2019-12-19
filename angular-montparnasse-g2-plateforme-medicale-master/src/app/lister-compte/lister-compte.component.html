@@ -1,0 +1,26 @@
+<div class="container spacer">
+    <div class="panel panel-primary">
+        <tr>Choisissez votre compte utilisateur ainsi que le type de profil que vous voulez creer :</tr>
+        <button routerLink="/ajouterPatient" class="btn btn-primary mr-2">Profil patient</button>
+        <button routerLink="/ajouterPraticien" class="btn btn-primary mr-2">Profil praticien</button>
+        <button routerLink="/ajouterPayeur" class="btn btn-primary mr-2">Profil payeur</button>
+        <div class="panel-heading">Liste des Comptes</div>
+        <div class="panel-body">
+            <table class="table table-striped">
+                <tr>(NB IMPORTANT: Vous devez conserver votre ID de compte</tr>
+                <tr>
+                    <td>ID</td>
+                    <td>LOGIN</td>
+                    <td>MOT DE PASSE</td>
+                    <td>TYPE</td>
+                </tr>
+                <tr *ngFor="let a of pageComptes">
+                    <td>{{a.idCompte}}</td>
+                    <td>{{a.login}}</td>
+                    <td>{{a.mdp}}</td>
+                    <td>{{a.type}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

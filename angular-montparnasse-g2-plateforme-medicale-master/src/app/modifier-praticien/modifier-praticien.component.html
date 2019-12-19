@@ -1,0 +1,24 @@
+<!-- formulaire de saisie -->
+<div class="form-group">
+    <label>Nom:</label>
+    <input type="text" [(ngModel)]="praticien.nom"/>
+    <label>Prenom:</label>
+    <input type="text" [(ngModel)]="praticien.prenom"/>
+    <label>Date de naissance:</label>
+    <input type="text" [(ngModel)]="praticien.dateDeNaissance"/>
+    <label>Telephone:</label>
+    <input type="text" [(ngModel)]="praticien.telephone"/>
+    <label>Email:</label>
+    <input type="text" [(ngModel)]="praticien.email"/>
+    <label>Identifiant National:</label>
+    <input type="text" [(ngModel)]="praticien.idNationale"/>
+    <label>Liberal:</label>
+    <input type="text" [(ngModel)]="praticien.liberal"/>
+    <label>Metier:</label>
+    <input type="text" [(ngModel)]="praticien.metier"/>
+    <label>Structure:</label>
+    <input type="text" [(ngModel)]="praticien.structure"/>
+    <label>Affiliation:</label>
+    <input type="text" [(ngModel)]="praticien.affiliation"/>
+    <button (click)="modifierPraticiens()">Modifier un praticien</button> 
+</div>

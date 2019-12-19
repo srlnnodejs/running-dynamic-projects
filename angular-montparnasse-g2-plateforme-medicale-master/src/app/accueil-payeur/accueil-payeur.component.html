@@ -1,0 +1,78 @@
+<div class="container">
+	<div class="form-group">
+		<label>Veuillez saisir votre ID de Profil utilisateur :</label>
+		<input type="text" class="form-control" [(ngModel)]="payeur.idPayeur" />
+	</div>
+
+	<button type="button" class="btn btn-primary mr-2" (click)="espacePayeur()">Afficher l'espace personnel</button>
+	<div *ngIf="payeur.idPayeur > 0">
+        <br/>
+        <h2>Bienvenue sur votre espace personnel Payeur</h2>
+    <br/>
+		<table class="w3-table w3-striped">
+			<tbody>
+				<tr>
+                    <th scope="row">ID</th>
+					<td>{{payeur.idPayeur}}</td>
+                </tr>
+                <tr>
+					<th scope="row">Nom</th>
+					<td>{{payeur.nomPayeur}}</td>
+				</tr>
+				<tr>
+					<th scope="row">Type de payeur</th>
+					<td>{{payeur.typePayeur}}</td>
+				</tr>
+				<tr>
+					<th scope="row">Taux</th>
+					<td>{{payeur.taux}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<br/>
+		<div class="row text-center">
+	
+			<div class="card w-50">
+				<div class="card-body">
+					<h5 class="card-title">Historique des remboursements</h5>
+					<p class="card-text">Retrouvez ici la liste des remboursements</p>
+					<button routerLink="/listerRemboursement" class="btn btn-primary mr-2">Historique des
+						remboursement</button>
+				</div>
+			</div>
+			<div class="card w-50">
+				<div class="card-body">
+					<h5 class="card-title">Generer des remboursements</h5>
+					<p class="card-text">Retrouvez ici un espace de creation des remboursements</p>
+					<button routerLink="/ajouterRemboursement" class="btn btn-primary mr-2">Generer des remboursements</button>
+				</div>
+			</div>
+
+			<div class="card w-100">
+				<div class="card-body">
+					<h5 class="card-title">Historique des factures</h5>
+					<p class="card-text">Retrouvez ici la liste des factures</p>
+					<button routerLink="/listerFacture" class="btn btn-primary mr-2">Historique des factures</button>
+				</div>
+			</div>
+
+			<div class="card w-50">
+				<div class="card-body">
+					<h5 class="card-title">Listes des patients</h5>
+					<p class="card-text">Retrouvez ici la liste des patients</p>
+					<button routerLink="/listePatientsRattaches" class="btn btn-primary mr-2">Liste des patients
+						rattaches</button>
+				</div>
+			</div>
+
+			<div class="card w-50">
+				<div class="card-body">
+					<h5 class="card-title">Listes des praticiens</h5>
+					<p class="card-text">Retrouvez ici la liste des praticiens</p>
+					<button routerLink="/listePraticiensRattaches" class="btn btn-primary mr-2">Liste des praticiens
+						rattaches</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
